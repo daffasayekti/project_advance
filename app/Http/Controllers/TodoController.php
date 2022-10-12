@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Pattern\Services\TodoService;
+
 use Illuminate\Http\Request;
-use App\Models\todoApps;
 
 class TodoController extends Controller
 {

@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\User;
 
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Support\Facades\Hash;
 
+use App\Pattern\Services\AuthService;
+
 class AuthController extends Controller
 {
+    private AuthService $authService;
+
     public function __construct()
     {
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
+        $this->authService = new AuthService;
     }
 
     public function login()
