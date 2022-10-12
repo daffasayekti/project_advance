@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-use Jenssegers\Mongodb\Eloquent\Model;
-
-class User extends Model implements JWTSubject
+class User extends Authenticatable implements JWTSubject
 {
     protected $connection = "mongodb";
     protected $collection = "users";
-    protected $fillable   = ['name', 'email', 'password'];
+    protected $fillable   = ['name', 'email', 'password',];
 
     public function getJWTCustomClaims()
     {
