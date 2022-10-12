@@ -11,14 +11,5 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array<int, string>
      */
-    protected $except = [
-        'todoapps/create_todo',
-        'todoapps/update_todo/*',
-        'todoapps/delete_todo/*',
-        'auth/login',
-        'auth/register',
-        'auth/logout',
-        'auth/refresh',
-        'auth/me'
-    ];
+    protected $except = [];
 }
